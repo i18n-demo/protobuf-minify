@@ -1,0 +1,5 @@
+see [hpc](https://github.com/i18n-site/hpc/blob/main/doc/01_proto.md)
+
+run ./gen.sh
+
+<+ ./size.md>

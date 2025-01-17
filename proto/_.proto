@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+message Call
+{
+  int32 func = 1;
+  bytes args = 2;
+}
+
+message CallLi
+{
+  repeated Call call_li = 1;
+}
+
+message BinLi
+{
+  repeated bytes bin_li = 1;
+}
+
+message FormErr
+{
+  uint32 code = 1;
+  optional bytes bin = 2;
+}
+
+message FormErrLi
+{
+  repeated FormErr form_err_li = 1;
+}
+
+enum ErrCode {
+  User = 0;
+  CaptchaErr = 1;
+  Form = 2;
+}
+
+message ErrMsg
+{
+  ErrCode err_code = 1;
+  bytes bin = 2;
+}
+
+message SignupMailArgs
+{
+  string address = 1;
+  string password = 2;
+}
+
+message SignupMailVerifyArgs
+{
+  string address = 1;
+  string code = 2;
+}
+
+message Captcha
+{
+  bytes id = 1;
+  bytes img = 2;
+  bytes tip = 3;
+}
